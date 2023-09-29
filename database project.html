@@ -1,0 +1,45 @@
+<! DOCTYPE html>  
+<Html>  
+   <Head>   
+      <style type="text/css">  
+         fieldset {  
+            border: #00cc00 10px solid;  
+            padding: 135px;  
+            color: white;  
+      </style>  
+   <body style="background-color:teal">
+  <form method="POST" name="google-sheet">  
+   <fieldset>  
+      <legend>VIDUSHI PROJECT</legend>  
+      <center>  
+         <img src="C:\Users\ASUS\Desktop\New folder\login2.png" alt="Green man" width="200" height="200"><br>  
+         First name<br>
+         <input type="text" placeholder="Enter first name" name="fname" Value=""><br>  
+         Last name<br>
+         <input type="text" name="lname" Value=""><br>  
+         phone number<br>
+         <input type="text" name="phn number" Value=""><br>
+         age<br>
+         <input type="text" name="age" Value=""><br>
+           Address1<br>
+         <input type="text" name="Add1" Value=""><br> 
+         Address2<br>
+         <input type="text" name="Add2" Value=""><br> 
+         <br>  
+         <input type="submit" onclick="Sample()" value="Submit" name="submit"><br>  
+      </center>  
+   </fieldset>  
+</form>
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxDKr0ym2Sy3xxJ7y1Tf46xDADtNJMdNGcGOJQMCJaCwadni3aEA08ctg2zSPMraHHXNQ/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>  
+</body>  
+</html>
